@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Slider</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #EFEFED;
+            font-family: 'Inter', sans-serif;
+        }
+
+        h4 {
+            font-size: 22px;
+        }
+
+        img {
+            opacity: 0.7;
+        }
+
+        .container {
+            width: 80%;
+            padding: 10px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-wrapper {
+            z-index: 0;
+        }
+
+        .container .swiper-slide {
+            position: relative;
+            text-align: center;
+            font-size: 18px;
+            border-radius: 10px;
+            text-align: start;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            ;
+        }
+
+        .container .swiper-slide:hover {
+            background-color: #2E2C3A;
+            color: #EFEFED !important;
+        }
+
+        .container .swiper-slide img,
+        .container .swiper-slide video {
+            display: block;
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            opacity: 1;
+        }
+
+        .container .swiper-slide:hover img {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .container .swiper-slide:hover video {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .container .swiper-slide .card-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 1.5rem 1.5rem;
+            height: 9em;
+            text-align: left;
+        }
+
+        .container .swiper-slide .card-title,
+        .container .swiper-slide .card-text {
+            padding-bottom: .5em;
+        }
+
+        .verde {
+            background-color: #a1c29f;
+            color: #2E2C3A;
+        }
+
+        .azul {
+            background-color: #103682;
+            color: #EFEFED;
+        }
+
+        .violeta {
+            background-color: #9371c7;
+            color: #EFEFED;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .container .swiper-slide img,
+            .container .swiper-slide video {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="swiper-container mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide verde">
+                    <img src="./contenido/carrefour.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Carrefour en BioFeria</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Influencers Strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide violeta">
+                    <img src="/contenido/bilbao.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Bilbao</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Social Media Management</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide verde">
+                    <img src="/contenido/deniro.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Deniro</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Social Media Management & Content creation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide azul" onmouseover="unmuteVideo('video2')" onmouseout="muteVideo('video2')">
+                    <video id="video1" loop playsinline muted autoplay src="/contenido/ostende.mp4"></video>
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Ostende</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>PR & Influencers Strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide violeta">
+                    <img src="/contenido/saltanpepa.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Saltan Pepa</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Social Media Management, Content Creation & Influencers Strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide verde">
+                    <img src="/contenido/sede.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>SEDE Whisky</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>PR & Influencers Strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide azul">
+                    <img src="/contenido/sifon.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Sifón Sodería</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>PR & Influencers Strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide violeta">
+                    <img src="/contenido/soloterra.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Solo Terra</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Sitio Web</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide verde">
+                    <img src="/contenido/pasto.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Pasto</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>E-commerce</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide azul">
+                    <img src="/contenido/cacharel.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Cacharel</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Influencers Strategy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide violeta">
+                    <img src="/contenido/sporting.jpg" alt="" />
+                    <div class="card-description">
+                        <div class="card-title">
+                            <h4>Sporting</h4>
+                        </div>
+                        <div class="card-text">
+                            <p>Influencers Strategy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>
+        function unmuteVideo(videoId) {
+            var video = document.getElementById(videoId);
+            video.muted = false;
+        }
+
+        function muteVideo(videoId) {
+            var video = document.getElementById(videoId);
+            video.muted = true;
+        }
+        var swiper = new Swiper('.mySwiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 10,
+            freeMode: true,
+            init: false,
+
+            autoplay: {
+                delay: 2500,
+                pauseOnMouseEnter: true,
+            },
+
+            breakpoints: {
+                "@0.00": {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                "@0.75": {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                "@1.00": {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                "@1.75": {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+        });
+        swiper.init();
+    </script>
+</body>
+
+</html>
